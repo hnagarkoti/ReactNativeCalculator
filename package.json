@@ -16,11 +16,7 @@
     "redux": "^3.6.0",
     "lodash": "^4.15.0",
     "querystring": "^0.2.0",
-    "react-native-keyboard-aware-scroll-view": "^0.2.0",
-    "react-native-material-design": "github:teampumpkin/react-native-material-design#77f53d5d6cf1fca1143cb9ff9e12393ac5fe4400",
-    "react-native-material-design-styles": "^0.2.6",
-    "react-native-router-redux": "github:teampumpkin/react-native-router-redux#013d2e2d1db6ae650c4b6c3c76e948c77451113c",
-    "react-native-button": "^1.6.0"
+    "react-native-material-design-styles": "^0.2.6"
   },
   "jest": {
     "preset": "jest-react-native"

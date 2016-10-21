@@ -12,7 +12,8 @@ const inputButtons = [
   [1, 2, 3, '/'],
   [4, 5, 6, '*'],
   [7, 8, 9, '-'],
-  [0, '.', '=', '+']
+  [0, '.', '=', '+'],
+  ['CLEAR', 'DEL']
 ];
 
 
@@ -26,7 +27,9 @@ class ReactCalci extends React.Component {
     this.state = {
       previousInputValue: 0,
       inputValue: 0,
-      selectedSymbol: null
+      selectedSymbol: null,
+      lastInput: []
+      // displayFullString: null
     }
   }
   componentDidMount(){
@@ -71,6 +74,7 @@ class ReactCalci extends React.Component {
     _onInputButtonPressed(input) {
       switch (typeof input) {
         case 'number':
+              this.state.lastInput.push(input);
               return this._handleNumberInput(input);
         case 'string':
               return this._handleStringInput(input);
@@ -107,6 +111,31 @@ class ReactCalci extends React.Component {
                 selectedSymbol: null
               });
               break;
+        case 'CLEAR':
+            this.setState({
+              previousInputValue: 0,
+              inputValue: 0,
+              selectedSymbol: null
+            });
+            break;
+        case 'DEL':
+            if(!this.state.selectedSymbol){
+              let inputValue = this.state.inputValue;
+              let len = this.state.lastInput.length;
+              let newVal;
+              if(len){
+                let newArray = this.state.lastInput.pop();
+                this.setState({
+                  this.state.lastInput: newArray,
+                  this.state.inputValue: Math.floor(newArray.join(""))
+                });
+
+              }
+              // alert((this.state.inputValue / 10) - );
+              // let newInputVal = ( this.state.inputValue - ((this.state.inputValue) * 10));
+              // alert(newInputVal);
+            }
+            break;
 
       }
     }
