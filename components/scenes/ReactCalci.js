@@ -120,17 +120,18 @@ class ReactCalci extends React.Component {
             break;
         case 'DEL':
             if(!this.state.selectedSymbol){
-              let inputValue = this.state.inputValue;
-              let len = this.state.lastInput.length;
-              let newVal;
-              if(len){
-                let newArray = this.state.lastInput.pop();
-                this.setState({
-                  this.state.lastInput: newArray,
-                  this.state.inputValue: Math.floor(newArray.join(""))
-                });
+              alert('In Progress not finished yet');
+              // let inputValue = this.state.inputValue;
+              // let len = this.state.lastInput.length;
+              // let newVal;
+              // if(len){
+                // let newArray = this.state.lastInput.pop();
+                // this.setState({
+                //   this.state.lastInput: newArray,
+                //   this.state.inputValue: Math.floor(newArray.join(""))
+                // });
 
-              }
+              // }
               // alert((this.state.inputValue / 10) - );
               // let newInputVal = ( this.state.inputValue - ((this.state.inputValue) * 10));
               // alert(newInputVal);
